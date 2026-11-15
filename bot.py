@@ -11,7 +11,7 @@ from aiogram.types import (
 )
 
 # 1. Встав сюди свій токен від @BotFather
-TOKEN = "9107537529:AAF1UBLdvxjQr5Yg-Lx0ZUser_LUmZuQNbs"
+TOKEN = "9050784583:AAF6SqCx37uRY-nNhKnNBouCKLLDdZYhcqw"
 
 # 2. Посилання на твій сайт-квиток на GitHub Pages
 WEB_APP_URL = "https://winsi9ng.github.io/transport-app/"
