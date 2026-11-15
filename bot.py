@@ -83,7 +83,7 @@ async def cmd_start(message: types.Message):
     keyboard = InlineKeyboardMarkup(inline_keyboard=keyboard_buttons)
 
     await message.answer(
-        f"Вітаю! Це бот для оплати проїзду.\n\n{status_text}\n\nОберіть тариф або придбайте доступ за зірки Telegram:",
+        f"\n\n{status_text}\n\nОберіть тариф або придбайте доступ за зірки Telegram:",
         reply_markup=keyboard,
         parse_mode="Markdown"
     )
