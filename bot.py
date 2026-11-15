@@ -83,7 +83,7 @@ async def cmd_start(message: types.Message):
     keyboard = InlineKeyboardMarkup(inline_keyboard=keyboard_buttons)
 
     await message.answer(
-        f"\n\n{status_text}\n\nОберіть тариф або придбайте доступ за зірки Telegram:",
+        f"Вітаю! Це бот для оплати проїзду.\n\n{status_text}\n\nОберіть тариф або придбайте доступ за зірки Telegram:",
         reply_markup=keyboard,
         parse_mode="Markdown"
     )
@@ -210,3 +210,4 @@ if __name__ == "__main__":
     
     # Запуск бота
     asyncio.run(dp.start_polling(bot))
+
