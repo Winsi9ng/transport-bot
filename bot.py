@@ -184,3 +184,29 @@ if __name__ == "__main__":
     import asyncio
     logging.basicConfig(level=logging.INFO)
     asyncio.run(dp.start_polling(bot))
+
+import os
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import threading
+
+# Простий заглушка-сервер для того, щоб Render бачив відкритий порт
+class SimpleHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot is alive!")
+
+def run_web_server():
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(("0.0.0.0", port), SimpleHandler)
+    server.serve_forever()
+
+if __name__ == "__main__":
+    import asyncio
+    logging.basicConfig(level=logging.INFO)
+    
+    # Запускаємо веб-сервер у фоновому потоці заради порту Render
+    threading.Thread(target=run_web_server, daemon=True).start()
+    
+    # Запуск бота
+    asyncio.run(dp.start_polling(bot))
